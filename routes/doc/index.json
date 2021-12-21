@@ -1,0 +1,78 @@
+{
+    "paths": {
+        "/api/auth": {
+            "post": {
+                "tags": [
+                    "authentication"
+                ],
+                "description": "authentication user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "integer"
+                                    },
+                                    "nik": {
+                                        "type": "integer"
+                                    },
+                                    "role": {
+                                        "type": "string"
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "0": {
+                                "value": "{\n   \"id\": \"1\", \n   \"nik\": \"123123\", \n     \"role\": \"admin\"}"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "success",
+                        "content": {
+                            "application/json; charset=utf-8": {
+                                "schema": {
+                                    "type": "string"
+                                },
+                                "examples": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/fetch": {
+            "get": {
+                "tags": [
+                    "fetch data"
+                ],
+                "description": "fetch data product",
+                "parameters": [
+                    {
+                        "name": "token",
+                        "in": "header",
+                        "required": true,
+                        "explode": false,
+                        "schema": {
+                            "type": "string"
+                        },
+                        "example": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEiLCJuaWsiOiIzMTEyMzIzIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjQwMDcyNzI2LCJleHAiOjE2NDAwNzYzMjZ9.SOLu4EauUuumqFMjo9lwCD93S-VhHXFkWrfeiXZlm7o" 
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "content": {
+                            "application/json; charset=utf-8": {
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
