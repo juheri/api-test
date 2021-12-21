@@ -17,10 +17,6 @@ module.exports = {
         },
         servers: [
         {
-            url: 'http://localhost:3001/',
-            description: 'localhost'
-        },
-        {
             url: 'https://stg-api-test.herokuapp.com/',
             description: 'staging'
         }
